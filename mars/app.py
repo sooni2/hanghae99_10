@@ -22,13 +22,14 @@ def web_mars_post():
     name_receive = request.form['name_give']
     address_receive = request.form['address_give']
     size_receive = request.form['size_give']
-    price_receive = request.form['price_give']
-
+    size = size_receive
+    price = size * 500
+      
     doc = {
         'name': name_receive,
         'address': address_receive,
         'size': size_receive,
-        'price': price_receive,
+        'price': price
     }
     db.mars.insert_one(doc)
 
